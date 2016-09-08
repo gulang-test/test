@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript" src="http://doccenter.vip.vip.com/doccenter2-webapp/frontend/js/global.js"></script>
+<script>
+function test(){
+	var wait = function(dtd){
+	    var tasks = function(){
+	        alert("执行完毕！");
+	        dtd.resolve(); // 改变deferred对象的执行状态
+	    };
+	    setTimeout(tasks,5000);
+	    return dtd;
+	};
+	function required( dtd ){
+		var dtd = $.Deferred(); // 新建一个deferred对象
+		$.ajax({
+			'url' :'http://cmc.vip.com/ads/position?&callback=kid_cms&type=004pu03&channelId=-1&warehouse=VIP_SH&_=1448964003636',
+			'dataType':'JSONP',
+			'type':'GET',
+			jsonp:'callback',
+			jsonpCallback:'kid_cms',
+			'success':function( rtn	){
+				console.log(rtn);
+				rtn.name = "weiping.sun";
+				dtd.resolve();
+			}
+		});
+		return dtd;
+	}
+	//$.when(wait(dtd))
+	$.when(required())
+	.done(function( rtn ){ console.log('rtn',rtn); })
+	.fail(function(){ alert("出错啦！"); });
+	/*$.ajax({
+		'url' :'http://cmc.vip.com/ads/position?&callback=kid_cms&type=004pu03&channelId=-1&warehouse=VIP_SH&_=1448964003636',
+		'dataType':'JSONP',
+		'type':'GET',
+		jsonp:'callback',
+		jsonpCallback:'kid_cms',
+		'success':function( rtn	){
+			console.log(rtn);
+			rtn.name = "weiping.sun";
+		}
+	}).then(function(rtn){
+		console.log('rtn',rtn);
+		rtn.age = "26";
+		rtn.name = "weiping"
+		return rtn;
+	}).then(function( response ){
+		console.log('response2',response);
+		response.name = "sun";
+		return response;
+	}).done(function(rtn){
+		console.log('done',rtn);
+	});*/
+	/*$.ajax({
+		'url' :'http://cmc.vip.com/ads/position?&callback=kid_cms&type=004pu03&channelId=-1&warehouse=VIP_SH&_=1448964003636',
+		'dataType':'JSONP',
+		'type':'GET',
+		jsonp:'callback',
+		jsonpCallback:'kid_cms',
+		'success':function( rtn ){
+			console.log(rtn);
+		}
+
+	});	*/
+}
+test();
+</script>
+</body>
+</html>
