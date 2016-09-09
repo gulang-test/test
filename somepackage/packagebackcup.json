@@ -1,0 +1,48 @@
+{
+    "main" : "./lib/interface.js",
+    "name": "mypackage", //包的名称，必须是唯一的，由小写英文字母、数字和下划线组成，不能包含空格。
+    "description": "Sample package for CommonJS. This package demonstrates the required
+    elements of a CommonJS package.",//包的简要说明
+    "version": "0.7.0",//符合语义化版本识别①规范的版本字符串。
+    "keywords": [
+        "package",
+        "example"
+    ],//关键字数组，通常用于搜索。
+    "maintainers": [
+        {
+            "name": "Bill Smith",
+            "email": "bills@example.com",
+        }
+    ],//维护者数组，每个元素要包含 name、email （可选）、web （可选）字段。
+    "contributors": [
+        {
+            "name": "BYVoid",
+            "web": "http://www.byvoid.com/"
+        }
+    ],//贡献者数组，格式与maintainers相同。包的作者应该是贡献者数组的第一个元素。
+    "bugs": {
+        "mail": "dev@example.com",
+        "web": "http://www.example.com/bugs"
+    },//提交bug的地址，可以是网址或者电子邮件地址。
+    "licenses": [
+        {
+            "type": "GPLv2",
+            "url": "http://www.example.org/licenses/gpl.html"
+        }
+    ],//许可证数组，每个元素要包含 type （许可证的名称）和 url （链接到许可证文本的地址）字段
+    "repositories": [
+        {
+            "type": "git",
+            "url": "http://github.com/BYVoid/mypackage.git"
+        }
+    ],//仓库托管地址数组，每个元素要包含 type （仓库的类型，如 git ）、url （仓库的地址）和 path （相对于仓库的路径，可选）字段。
+    "dependencies": {
+        "express": "^4.14.0",
+        "webkit": "1.2",
+        "ssl": {
+            "gnutls": ["1.0", "2.0"],
+            "openssl": "0.9.8"
+        }
+    },//包的依赖，一个关联数组，由包名称和版本号组成。
+
+}
