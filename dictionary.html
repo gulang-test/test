@@ -1,32 +1,32 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+    <title></title>
 </head>
 <body>
 <script type="text/javascript">
 function Dictionary() {
-	this.add = add;
-	this.datastore = new Array();
-	this.find = find;
-	this.remove = remove;
-	this.showAll = showAll;
-} 
+    this.add = add;
+    this.datastore = new Array();
+    this.find = find;
+    this.remove = remove;
+    this.showAll = showAll;
+}
 function add(key, value) {
-	this.datastore[key] = value;
-} 
+    this.datastore[key] = value;
+}
 function find(key) {
-	return this.datastore[key];
-} 
+    return this.datastore[key];
+}
 function remove(key) {
-	delete this.datastore[key];
+    delete this.datastore[key];
 }
 function showAll() {
-	for(var key in Object.keys(this.datastore)) {
-		console.log(key + " -> " + this.datastore[key]);
-	}
+    console.log('keys',Object.keys(this.datastore),this.datastore['Mike']);
+    for(var key in Object.keys(this.datastore)) {
+        console.log(key + " -> " + this.datastore[ Object.keys(this.datastore)[key] ]);
+    }
 }
-//load("Dictionary.js");
 var pbook = new Dictionary();
 pbook.add("Mike","123");
 pbook.add("David", "345");
@@ -34,6 +34,23 @@ pbook.add("Cynthia", "456");
 console.log("David's extension: " + pbook.find("David"));
 pbook.remove("David");
 pbook.showAll();
+var test = new Array();
+test['test'] = 'test';
+console.log('test');
+delete test['test'];
+for( var str in test ){
+    console.log(test[str]);
+}
+function isPrime(n) {
+    if (n <= 3) { return n > 1; }
+    if (n % 2 == 0 || n % 3 == 0) { return false; }
+
+    for (var  i = 5; i * i <= n; i += 6) {
+        if (n % i == 0 || n % (i + 2) == 0) { return false; }
+    }
+    return true;
+}
+isPrime(5);
 </script>
 </body>
 </html>

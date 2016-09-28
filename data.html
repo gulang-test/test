@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<script type="text/javascript">
+var data = [ 'm','y','t','e','s','t' ];
+var foreach = data.forEach(function( item ){
+    console.log(item);
+});
+console.log('foreach',foreach);
+var everyfn = data.every(function( item ){
+    return typeof(item) == 'string';
+});
+console.log('everyfn',everyfn);
+var somefn = data.some(function( item ){
+    return item == 'ts';
+});
+console.log('everyfn',somefn);
+var reducefn = data.reduce(function(a,b){
+    return a+b;
+});
+console.log('reducefn',reducefn);
+var reducerightfn = data.reduceRight(function(a,b){
+    return a+b;
+});
+console.log('reducerightfn',reducerightfn);
+var mapfn = data.map(function(item){
+    return item + item;
+});
+console.log('mapfn',mapfn);
+function afterc(str) {
+    if (str.indexOf("cie") > -1) {
+        return true;
+    }
+    return false;
+}
+var words = ["recieve","deceive","percieve","deceit","concieve"];
+var misspelled = words.filter(afterc);
+console.log('misspelled',misspelled);
+var filterfn = mapfn.filter(function(item){
+    return item =='mm' ? false: true;
+});
+console.log('filterfn',filterfn);
+</script>
+</body>
+</html>
