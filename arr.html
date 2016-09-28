@@ -1,0 +1,98 @@
+!<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var a = [1,2,423453,423,1,1,3,4,2];
+for( var i=a.length-1;i>=0;i-- ){
+	//console.log('i',i,a);
+	for( var l=0;l<a.length;l++ ){		
+		if( i!=l&& a[i] == a[l] ){
+			//console.log('l',l,a);
+			a.splice(i,1);
+			break;
+		}
+	}
+}
+console.log(a);
+a = [1,2,423453,423,1,1,3,4,2],c={};
+for( var i=0;i<a.length;i++ ){
+	if( !c[ a[i] ] ){
+		c[ a[i] ] = 1;
+	}else{
+		a.splice(i,1);
+		i--;
+	}
+}
+console.log(a);
+a = [1,2,423453,423,1,1,3,4,2],c=[];
+for( var i=0;i<a.length;i++ ){
+	if( c.indexOf( a[i] )  == -1 ){
+		c.push( a[i] );
+	}
+}
+console.log(c);
+var b = [{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"1","b":"2","c":"2342"},{"a":"3","b":"2","c":"2342"},{"a":"2","b":"2","c":"2342"}];
+for( var i=b.length-1;i>=0;i-- ){
+	//console.log('i',i,b);
+	for( var l=0;l<b.length;l++ ){		
+		if( i!=l ){
+			var isSame = true;
+			for( var str in b[i] ){
+				if( b[i][str]  !== b[l][str] ){
+					isSame = false;
+				}				
+			}
+			for( var str in b[l] ){
+				if( b[l][str]  !== b[i][str] ){
+					isSame = false;
+				}	
+			}	
+			if( isSame ){
+				b.splice(i,1);
+				break;
+			}			
+			
+		}
+	}
+}
+console.log(b);
+function quick_sort(list, start, end) {  //console.log(list, start, end)
+      if (start < end) {  
+        var pivotpos = partition(list, start, end);   //找出快排的基数
+        quick_sort(list, start, pivotpos - 1);        //将左边的快排一次
+        quick_sort(list, pivotpos + 1, end);          //将右边的快排一次
+      }  
+    }  
+
+      
+    //将一个序列调整成以基数为分割的两个区域，一边全都不小于基数，一边全都不大于基数
+    function partition(list, start, end) {  
+      var pivotpos = start;  
+      var pivot = list[start];  
+      var tmp;  
+      for(var i = start + 1; i <= end; i ++) { 
+      	console.log(list, 'i='+i, 'tmp=' + tmp, 'pivotpos' + pivotpos ); 
+        if (list[i] < pivot) {  
+          tmp = list[i];  
+          pivotpos += 1;  
+          list[i] = list[pivotpos];  
+          list[pivotpos] = tmp;  
+        }  
+      }  
+
+      tmp = list[start];  
+      list[start] = list[pivotpos];  
+      list[pivotpos] = tmp;  
+      return pivotpos;  
+    }  
+
+      
+    var list = [8,2,4,65,2,4,7,1,9,0,2,34,12];  
+
+    quick_sort(list, 0, list.length);
+</script>
+</body>
+</html>
