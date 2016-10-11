@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<form name="test">
+    <input name="input1" value="input1"/>
+    <input name="input2" value="input2"/>
+    <input name="input3" disabled="disabled" value="input3"/>
+    <input name="input4" readonly="true" value="input4">
+    <input type="button" value="点我" id="btn" />
+</form>
+<script type="text/javascript" src="JQ.js"></script>
+<div id="myDiv" data-appId="12345" data-myname="Nicholas"></div>
+<script type="text/javascript">
+    var myObj = {
+
+    specialFunction: function () {
+        console.log(111);
+    },
+
+    anotherSpecialFunction: function () {
+
+    },
+
+    getAsyncData: function (cb) {
+       cb();
+    },
+
+    render: function () {
+        var that = this;
+        this.getAsyncData(function () {
+            this.specialFunction();
+            this.anotherSpecialFunction();
+        }.bind(this));
+    }
+};
+
+myObj.render();
+
+var div = document.getElementById("myDiv");
+//取得自定义属性的值
+var appId = div.dataset.appId;
+var myName = div.dataset.myname;
+//设置值
+div.dataset.appId = 23456;
+div.dataset.myname = "Michael";
+
+if (div.dataset.myname){
+    //alert("Hello, " + div.dataset.myname);
+}
+
+$('#btn').click(function(){
+   console.log( $('form').serialize() ); 
+});
+
+</script>
+</body>
+</html>

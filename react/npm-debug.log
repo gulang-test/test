@@ -1,0 +1,37 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\nodejs\\node.exe',
+1 verbose cli   'D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'react',
+1 verbose cli   '--save' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of E:\gitlist\test\package.json
+5 verbose stack Error: Failed to parse json
+5 verbose stack No data, empty input at 1:1
+5 verbose stack
+5 verbose stack ^
+5 verbose stack     at parseError (D:\nvm-noinstall\v0.12.4\node_modules\npm\node_modules\read-package-json\read-json.js:379:11)
+5 verbose stack     at parseJson (D:\nvm-noinstall\v0.12.4\node_modules\npm\node_modules\read-package-json\read-json.js:68:23)
+5 verbose stack     at D:\nvm-noinstall\v0.12.4\node_modules\npm\node_modules\read-package-json\read-json.js:48:5
+5 verbose stack     at evalmachine.<anonymous>:334:14
+5 verbose stack     at D:\nvm-noinstall\v0.12.4\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:102:5
+5 verbose stack     at FSReqWrap.oncomplete (evalmachine.<anonymous>:95:15)
+6 verbose cwd E:\gitlist\test\react
+7 error Windows_NT 6.1.7601
+8 error argv "D:\\nodejs\\node.exe" "D:\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "react" "--save"
+9 error node v0.12.4
+10 error npm  v2.10.1
+11 error file E:\gitlist\test\package.json
+12 error code EJSONPARSE
+13 error Failed to parse json
+13 error No data, empty input at 1:1
+13 error
+13 error ^
+14 error File: E:\gitlist\test\package.json
+15 error Failed to parse package.json data.
+15 error package.json must be actual JSON, not just JavaScript.
+15 error
+15 error This is not a bug in npm.
+15 error Tell the package author to fix their package.json file. JSON.parse
+16 verbose exit [ 1, true ]
