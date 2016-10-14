@@ -12,9 +12,13 @@
 
 <div id="example"></div>
 <script type="text/babel">
-  // ** Our code goes here! **
+  var HelloMessage  = React.createClass({
+    render : function(){
+        return <h1>hello,{this.props.name}</h1>;
+    }
+  });
   ReactDOM.render(
-    <h1>hello, world!</h1>,
+    <HelloMessage  name="john"></HelloMessage>,
     document.getElementById('example')
   );
 </script>

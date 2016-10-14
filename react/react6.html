@@ -12,11 +12,19 @@
 
 <div id="example"></div>
 <script type="text/babel">
-  // ** Our code goes here! **
-  ReactDOM.render(
-    <h1>hello, world!</h1>,
-    document.getElementById('example')
-  );
+var MyTitle = React.createClass({
+    propTypes:{
+        title : React.PropTypes.string.isRequired,
+    },
+    render:function(){
+        return <h1>{this.props.title}</h1>;
+    }
+});
+var data = 123;
+ReactDOM.render(
+    <MyTitle title={data}/>,
+    document.body
+);
 </script>
 </body>
 </html>
