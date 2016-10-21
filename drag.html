@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div id="box">
+    <div id="main">
+        <div class="bar">拖拽</div>
+        <div class="bar">拖拽</div>
+        <div class="bar">拖拽</div>
+        <div class="bar">拖拽</div>
+        <div class="bar">拖拽</div>
+        <div class="bar">拖拽</div>
+    </div>
+</div>
+<!-- <div class="box" id="box">
+    <div id="bar"></div>
+    <div>测试环境</div>
+    <div id="top"></div>
+    <div>线上环境</div>
+    <div id="bottom"></div>
+</div> -->
+<style>
+/*.box{ margin:0 auto; width: 500px; }
+.box div{ float: left;width: 100%; }
+.box span{ float: left; background-color: blue; width: 100px; height: 50px; line-height: 50px; text-align: center; margin-right: 5px; margin-top: 5px; cursor: pointer;}*/
+#box{position:absolute; left:100px; top:100px; padding:5px; background:#f0f3f9; font-size:12px; -moz-box-shadow:2px 2px 4px #666666; -webkit-box-shadow:2px 2px 4px #666666;}
+#main{border:1px solid #a0b3d6; background:white;}
+.bar{line-height:24px; background:#beceeb; border-bottom:1px solid #a0b3d6; padding-left:5px; cursor:move; float: left; width: 40px; height: 40px; line-height: 40px;}
+#content{width:420px; height:250px; padding:10px 5px;}
+</style>
+<script type="text/javascript" src="JQ.js"></script>
+<script type="text/javascript">
+var data = [
+    {"name":"sun1",state : "1"},{"name":"sun11",state : "0"},
+    {"name":"sun2",state : "1"},{"name":"sun22",state : "0"},
+    {"name":"sun10",state : "1"},{"name":"sun33",state : "0"},
+    {"name":"sun3",state : "1"},{"name":"sun44",state : "0"},
+    {"name":"sun4",state : "1"},{"name":"sun55",state : "0"},
+    {"name":"sun5",state : "1"},{"name":"sun66",state : "0"},
+    {"name":"sun6",state : "1"},{"name":"sun77",state : "0"},
+    {"name":"sun7",state : "1"},{"name":"sun88",state : "0"},
+    {"name":"sun8",state : "1"},{"name":"sun99",state : "0"}
+];
+var $box =  document.getElementById('box'),$top = document.getElementById("top"),$bottom=document.getElementById("bottom"),aTop=[],aBottom=[];
+for(var i=0;i<data.length;i++){
+    if( data[i].state == '1' ){
+        aTop.push('<span>' + data[i].name + '</span>');
+    }else{
+        aBottom.push('<span>' + data[i].name + '</span>');
+    }
+}
+//$top.innerHTML = aTop.join("");
+//$bottom.innerHTML = aBottom.join("");
+function Darg(){
+    this.box = $box;
+    this.top = $top;
+    this.bottom = $bottom;
+    this.span = this.box.getElementsByTagName('span');
+}
+Darg.prototype.mousedown = function(){
+    this.box.onmousedown = function(event){
+        var event = event || window.event;
+        console.log(event.pageX,event.pageY);
+    }
+}
+
+
+var params = {
+    left: 0,
+    top: 0,
+    currentX: 0,
+    currentY: 0,
+    flag: false
+};
+var getCss = function(o,key){
+    return o.currentStyle? o.currentStyle[key] : document.defaultView.getComputedStyle(o,false)[key];   
+};
+function StartDrag(target,bar, callback){
+    var _this = this;
+    _this.target = target;
+    _this.params = {
+        left: 0,
+        top: 0,
+        currentX: 0,
+        currentY: 0,
+        flag: false
+    };
+    _this.target.style.position = 'absolute';
+    if(getCss(_this.target, "left") !== "auto"){
+        _this.params.left = getCss(_this.target, "left");
+    }
+    if(getCss(target, "top") !== "auto"){
+        _this.params.top = getCss(_this.target, "top");
+    }
+    _this.target.onmousedown = function(event){
+        _this.params.flag = true;
+        if(!event){
+            event = window.event;
+            _this.target.onselectstart = function(){
+                return false;
+            }  
+        }
+        var e = event;
+        _this.params.currentX = e.clientX;
+        _this.params.currentY = e.clientY;
+        document.onmousemove = _this.domMousemove;
+    };
+    document.onmouseup = function(){
+        _this.params.flag = false;    
+        if(getCss(_this.target, "left") !== "auto"){
+            _this.params.left = getCss(_this.target, "left");
+        }
+        if(getCss(target, "top") !== "auto"){
+            _this.params.top = getCss(_this.target, "top");
+        }
+        document.onmousedown = null;
+        document.onmousemove = null;
+    };
+    StartDrag.prototype.domMousemove = function(event){
+        var e = event ? event: window.event;
+        if(_this.params.flag){
+            var nowX = e.clientX, nowY = e.clientY;
+            var disX = nowX - _this.params.currentX, disY = nowY - _this.params.currentY;
+            _this.target.style.left = parseInt(_this.params.left) + disX + "px";
+            _this.target.style.top = parseInt(_this.params.top) + disY + "px";
+        }
+        
+        if (typeof callback == "function") {
+            callback(parseInt(_this.params.left) + disX, parseInt(_this.params.top) + disY);
+        }
+    } 
+} 
+window.onload = function(){
+    var oBox = document.getElementById("box");
+    var oBar = document.getElementsByClassName("bar");
+    for( var i =0;i<oBar.length;i++ ){
+        (function(obj){
+            new StartDrag(obj, oBox);
+        })(oBar[i]);
+    }    
+};
+</script>
+</body>
+</html>

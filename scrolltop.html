@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+</head>
+<body>
+<div style="margin:0 auto; width:1000px;">
+    <div style="height:500px;"></div>
+    <div style="height:500px;"></div>
+    <div style="height:500px;"></div>
+    <div style="height:500px;"></div>
+    <div style="height:500px; background:red;" id="test"><img src="http://www.sobaidupan.com/image/logo.gif" class=""/></div>
+    <div style="height:500px;"></div>
+</div>
+<Style>
+#test{ position: relative; }
+#test img{ position: absolute; left: 0; top: 0;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both }
+@-webkit-keyframes bounce {
+    0%{
+        left: 0;
+    }
+    100%{
+        left: 300px;
+    }
+}
+@-webkit-keyframes animated {
+    0%{
+        left: 300px;
+    }
+    100%{
+        left: 0;
+    }
+}
+.bounce {    
+    left:300px;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
+}
+.animated {
+    left:0;
+    -webkit-animation-name: animated;
+    animation-name: animated;
+}
+</Style>
+<script type="text/javascript" src="JQ.js"></script>
+<script type="text/javascript">
+var $test = $("#test");
+var btrue = true;
+$(window).scroll(function(){
+    var _top = $(window).scrollTop();
+
+    if( _top >= $test.offset().top && btrue ){
+        $test.find("img").eq(0).addClass("bounce").removeClass("animated");
+        btrue = false;
+    }else if( !btrue &&  _top < $test.offset().top ){
+        $test.find("img").eq(0).addClass("animated").removeClass("bounce");
+        btrue = true;      
+    }
+});
+</script>
+</body>
+</html>           
