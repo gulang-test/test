@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div class="box">
+    <div id="top"></div>
+    <div id="bottom"></div>
+</div>
+<style>
+.box{ margin:0 auto; width: 500px; }
+.box span{ float: left; background-color: blue; width: 100px; height: 50px; }
+</style>
+<script type="text/javascript" src="JQ.js"></script>
+<script type="text/javascript">
+var data = [
+    {"name":"weiping.sun1",state : "1"},{"name":"weiping.sun11",state : "0"},
+    {"name":"weiping.sun2",state : "1"},{"name":"weiping.sun22",state : "0"},
+    {"name":"weiping.sun10",state : "1"},{"name":"weiping.sun33",state : "0"},
+    {"name":"weiping.sun3",state : "1"},{"name":"weiping.sun44",state : "0"},
+    {"name":"weiping.sun4",state : "1"},{"name":"weiping.sun55",state : "0"},
+    {"name":"weiping.sun5",state : "1"},{"name":"weiping.sun66",state : "0"},
+    {"name":"weiping.sun6",state : "1"},{"name":"weiping.sun77",state : "0"},
+    {"name":"weiping.sun7",state : "1"},{"name":"weiping.sun88",state : "0"},
+    {"name":"weiping.sun8",state : "1"},{"name":"weiping.sun99",state : "0"}
+];
+var $top = $("#top"),$bottom=$("#bottom"),top=[],bottom=[];
+for(var i=0;i<data.length;i++){
+    if( data[i].state == '1' ){
+        top.push('<span>' + data[i] + '</span>');
+    }else{
+        bottom.push('<span>' + data[i] + '</span>');
+    }
+}
+$top.html(top.join(""));
+$bottom.html(bottom.join(""));
+
+</script>
+</body>
+</html>
