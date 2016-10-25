@@ -437,7 +437,7 @@ function innerTransform(input, options) {
 
 },{"./vendor/fbtransform/visitors":40,"./vendor/inline-source-map":41,"jstransform":22,"jstransform/visitors/type-syntax":36}],3:[function(_dereq_,module,exports){
 /*!
- * The buffer module from node.js, for the browser.
+ * The Buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
  * @license  MIT
@@ -517,7 +517,7 @@ function Buffer (subject, encoding, noZero) {
     if (subject.type === 'Buffer' && isArray(subject.data)) subject = subject.data
     length = +subject.length
   } else {
-    throw new TypeError('must start with number, buffer, array or string')
+    throw new TypeError('must start with number, Buffer, array or string')
   }
 
   if (length > kMaxLength) {
@@ -680,7 +680,7 @@ Buffer.byteLength = function byteLength (str, encoding) {
 Buffer.prototype.length = undefined
 Buffer.prototype.parent = undefined
 
-// toString(encoding, start=0, end=buffer.length)
+// toString(encoding, start=0, end=Buffer.length)
 Buffer.prototype.toString = function toString (encoding, start, end) {
   var loweredCase = false
 
@@ -754,7 +754,7 @@ Buffer.prototype.indexOf = function indexOf (val, byteOffset) {
   if (this.length === 0) return -1
   if (byteOffset >= this.length) return -1
 
-  // Negative offsets start from the end of the buffer
+  // Negative offsets start from the end of the Buffer
   if (byteOffset < 0) byteOffset = Math.max(this.length + byteOffset, 0)
 
   if (typeof val === 'string') {
@@ -868,7 +868,7 @@ Buffer.prototype.write = function write (string, offset, length, encoding) {
   offset = Number(offset) || 0
 
   if (length < 0 || offset < 0 || offset > this.length) {
-    throw new RangeError('attempt to write outside buffer bounds')
+    throw new RangeError('attempt to write outside Buffer bounds')
   }
 
   var remaining = this.length - offset
@@ -1024,11 +1024,11 @@ Buffer.prototype.slice = function slice (start, end) {
 }
 
 /*
- * Need to make sure that buffer isn't trying to write out of bounds.
+ * Need to make sure that Buffer isn't trying to write out of bounds.
  */
 function checkOffset (offset, ext, length) {
   if ((offset % 1) !== 0 || offset < 0) throw new RangeError('offset is not uint')
-  if (offset + ext > length) throw new RangeError('Trying to access beyond buffer length')
+  if (offset + ext > length) throw new RangeError('Trying to access beyond Buffer length')
 }
 
 Buffer.prototype.readUIntLE = function readUIntLE (offset, byteLength, noAssert) {
@@ -1188,7 +1188,7 @@ Buffer.prototype.readDoubleBE = function readDoubleBE (offset, noAssert) {
 }
 
 function checkInt (buf, value, offset, ext, max, min) {
-  if (!Buffer.isBuffer(buf)) throw new TypeError('buffer must be a Buffer instance')
+  if (!Buffer.isBuffer(buf)) throw new TypeError('Buffer must be a Buffer instance')
   if (value > max || value < min) throw new RangeError('value is out of bounds')
   if (offset + ext > buf.length) throw new RangeError('index out of range')
 }
@@ -1454,7 +1454,7 @@ Buffer.prototype.writeDoubleBE = function writeDoubleBE (value, offset, noAssert
   return writeDouble(this, value, offset, false, noAssert)
 }
 
-// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=buffer.length)
+// copy(targetBuffer, targetStart=0, sourceStart=0, sourceEnd=Buffer.length)
 Buffer.prototype.copy = function copy (target, target_start, start, end) {
   var self = this // source
 
@@ -1494,7 +1494,7 @@ Buffer.prototype.copy = function copy (target, target_start, start, end) {
   return len
 }
 
-// fill(value, start=0, end=buffer.length)
+// fill(value, start=0, end=Buffer.length)
 Buffer.prototype.fill = function fill (value, start, end) {
   if (!value) value = 0
   if (!start) start = 0
@@ -1526,7 +1526,7 @@ Buffer.prototype.fill = function fill (value, start, end) {
 }
 
 /**
- * Creates a new `ArrayBuffer` with the *copied* memory of the buffer instance.
+ * Creates a new `ArrayBuffer` with the *copied* memory of the Buffer instance.
  * Added in Node 0.12. Only available in browsers that support ArrayBuffer.
  */
 Buffer.prototype.toArrayBuffer = function toArrayBuffer () {
@@ -12719,7 +12719,7 @@ function createState(source, rootNode, transformOptions) {
       sourceLine: 1,
 
       /**
-       * Only when source map is used: last line in the buffer for which
+       * Only when source map is used: last line in the Buffer for which
        * source map was generated
        * @type {Number}
        */
@@ -12752,7 +12752,7 @@ function updateState(state, update) {
 }
 
 /**
- * Given a state fill the resulting buffer from the original source up to
+ * Given a state fill the resulting Buffer from the original source up to
  * the end
  *
  * @param {number} end
@@ -12838,9 +12838,9 @@ function _stripNonWhite(value) {
  * NOTE: This will skip instances of the specified char if they sit inside a
  *       comment body.
  *
- * NOTE: This function also assumes that the buffer's current position is not
+ * NOTE: This function also assumes that the Buffer's current position is not
  *       already within a comment or a string. This is rarely the case since all
- *       of the buffer-advancement utility methods tend to be used on syntactic
+ *       of the Buffer-advancement utility methods tend to be used on syntactic
  *       nodes' range values -- but it's a small gotcha that's worth mentioning.
  */
 function getNextSyntacticCharOffset(char, state) {
@@ -12925,7 +12925,7 @@ function catchupNewlines(end, state) {
 
 
 /**
- * Same as catchup but does not touch the buffer
+ * Same as catchup but does not touch the Buffer
  *
  * @param  {number} end
  * @param  {object} state
@@ -12951,7 +12951,7 @@ function move(end, state) {
 }
 
 /**
- * Appends a string of text to the buffer
+ * Appends a string of text to the Buffer
  *
  * @param {string} str
  * @param {object} state
@@ -13117,13 +13117,13 @@ function analyzeAndTraverse(analyzer, traverser, node, path, state) {
 
 /**
  * It is crucial that we traverse in order, or else catchup() on a later
- * node that is processed out of order can move the buffer past a node
+ * node that is processed out of order can move the Buffer past a node
  * that we haven't handled yet, preventing us from modifying that node.
  *
  * This can happen when a node has multiple properties containing children.
  * For example, XJSElement nodes have `openingElement`, `closingElement` and
  * `children`. If we traverse `openingElement`, then `closingElement`, then
- * when we get to `children`, the buffer has already caught up to the end of
+ * when we get to `children`, the Buffer has already caught up to the end of
  * the closing element, after the children.
  *
  * This is basically a Schwartzian transform. Collects an array of children,
