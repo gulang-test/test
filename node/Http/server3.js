@@ -63,5 +63,5 @@ function sendData( file, req,res ){
         }
     } );
 }
-server.listen(8080,'localhost');
+server.listen(8080,'0.0.0.0');
 
