@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<!--p>hello</p>
+<p>hello</p>
+<p>hello</p>
+<span></span><br><span></span><br><span></span>
+<div id="myid">12sd</div-->
+<script type="text/javascript" src="d3-cookbook/node_modules/d3/d3.js"></script>
+<script type="text/javascript">
+//var p = d3.select('body').selectAll('p').text('node');
+//p.style({"color":"red"}).style({"font-size":"20px"});
+
+var str ="china";
+var body = d3.select('body');
+/*console.log(body);
+body.style({"font-weight":"bold"});
+var p = body.selectAll('p');
+p.datum(str);
+p.text(function(d,i){
+	return '第' + i + "个元素绑定的数据是" + d; 
+});
+
+var arr = ['wei','ping','sun']
+var span = body.selectAll('span');
+span.data(arr).text(function(d){
+	return '内容是' + d;	
+});
+
+
+var dataset = ["I like dogs","I like cats","I like snakes"];
+var body = d3.select("body");
+var p = body.selectAll("p");
+p.data(dataset)
+  .text(function(d, i){
+	  console.log(d,i)
+      return d;
+  });
+var p1 = body.select("p");
+p1.style("color","red");
+var p = body.selectAll("p");
+p.style("color","red");
+body.append("p")
+    .text("append p element");
+body.insert("p","#myid")
+  .text("insert p element");
+  var p = body.select("#myid");
+p.remove();*/
+var width = 300;  //画布的宽度
+var height = 300;   //画布的高度
+ /*
+ <svg>
+	<rect></rect>
+	<rect></rect>
+  </svg>
+ */
+var svg = d3.select("body")     //选择文档中的body元素
+    .append("svg")          //添加一个svg元素
+    .attr("width", width)       //设定宽度
+    .attr("height", height);    //设定高度
+/*svg.append('rect');
+svg.append('rect');	*/
+	
+var dataset = [ 250 , 210 , 170 , 130 , 90 ];  //数据（表示矩形的宽度）
+var rectHeight = 25;   //每个矩形所占的像素高度(包括空白)
+svg.selectAll("rect")
+    .data(dataset)
+    .enter()
+    .append("rect")
+    .attr("x",20)
+    .attr("y",function(d,i){
+         return i * rectHeight;
+    })
+    .attr("width",function(d){
+         return d;
+    })
+    .attr("height",rectHeight-2)
+    .attr("fill","steelblue");
+svg.selectAll("rect")   //选择svg内所有的矩形
+    .data(dataset)  //绑定数组
+    .enter()        //指定选择集的enter部分
+    .append("rect") //添加足够数量的矩形元素
+
+</script>
+</body>
+</html>

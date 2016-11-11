@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body style="padding-top:200px;">
+<script type="text/javascript" src="d3-cookbook/node_modules/d3/d3.js"></script>
+<script>
+//画布大小
+var width = 400;
+var height = 800;
+ 
+//在 body 里添加一个 SVG 画布   
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+var circle = svg.append("circle").attr('cx',100).attr('cy',100).attr('r',100).style('fill','red');
+
+circle.on("click", function(){
+    //在这里添加交互内容
+	console.log(d3.event);
+});
+
+</script>
+</body>
+</html>

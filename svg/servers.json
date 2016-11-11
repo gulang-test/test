@@ -1,0 +1,510 @@
+{
+    "data": {
+        "myi.vip.com": {
+            "name": "myi.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "passport.api.vip.com",
+                "passport.api.vip.com",
+                "wallet.api.vip.com",
+                "wallet.api.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "shop.api.vip.com",
+                "shop.api.vip.com",
+                "coupon.api.vip.com",
+                "coupon.api.vip.com",
+                "image.api.vip.com",
+                "image.api.vip.com",
+                "passport.api.vip.com"
+            ],
+            "docs": "<p><h2>myi.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/myi.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/myi.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "passport.api.vip.com": {
+            "name": "passport.api.vip.com",
+            "type": "API",
+            "depends": [
+                "myi.vip.com",
+                "i.vip.com",
+                "passport.vip.com",
+                "mi.api.vip.com",
+                "wallet.api.vip.com",
+                "myi.vip.com",
+                "passport.vip.com",
+                "i.vip.com",
+                "mi.api.vip.com",
+                "wallet.api.vip.com"
+            ],
+            "dependedOnBy": [
+                "wallet.api.vip.com",
+                "wallet.api.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "myi.vip.com"
+            ],
+            "docs": "<p><h2>passport.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/passport.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/passport.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "i.vip.com": {
+            "name": "i.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "passport.api.vip.com",
+                "passport.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "coupon.api.vip.com",
+                "coupon.api.vip.com"
+            ],
+            "docs": "<p><h2>i.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/i.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/i.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "passport.vip.com": {
+            "name": "passport.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "passport.api.vip.com",
+                "passport.api.vip.com"
+            ],
+            "docs": "<p><h2>passport.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/passport.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/passport.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "mi.api.vip.com": {
+            "name": "mi.api.vip.com",
+            "type": "API",
+            "depends": [
+                "brand.vip.com",
+                "mapi-cart.vip.com",
+                "brand.vip.com",
+                "mapi-cart.vip.com"
+            ],
+            "dependedOnBy": [
+                "passport.api.vip.com",
+                "passport.api.vip.com",
+                "i.api.vip.com",
+                "i.api.vip.com"
+            ],
+            "docs": "<p><h2>mi.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/mi.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/mi.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "wallet.api.vip.com": {
+            "name": "wallet.api.vip.com",
+            "type": "API",
+            "depends": [
+                "passport.api.vip.com",
+                "myi.vip.com",
+                "checkout.api.vip.com",
+                "checkout.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "checkout.api.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "passport.api.vip.com"
+            ],
+            "dependedOnBy": [
+                "passport.api.vip.com",
+                "passport.api.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com"
+            ],
+            "docs": "<p><h2>wallet.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/wallet.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/wallet.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "order.api.vip.com": {
+            "name": "order.api.vip.com",
+            "type": "API",
+            "depends": [
+                "passport.api.vip.com",
+                "myi.vip.com",
+                "goods.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.vip.com",
+                "goods.api.vip.com",
+                "checkout.api.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "passport.api.vip.com",
+                "my.vip.com",
+                "wallet.api.vip.com",
+                "my.vip.com",
+                "wallet.api.vip.com"
+            ],
+            "dependedOnBy": [
+                "wallet.api.vip.com",
+                "wallet.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "coupon.api.vip.com",
+                "coupon.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.api.vip.com",
+                "address.api.vip.com",
+                "address.api.vip.com"
+            ],
+            "docs": "<p><h2>order.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/order.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/order.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "user.api.vip.com": {
+            "name": "user.api.vip.com",
+            "type": "API",
+            "depends": [
+                "passport.api.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "order.api.vip.com",
+                "i.vip.com",
+                "my.vip.com",
+                "myopen.vip.com",
+                "share.vip.com",
+                "club.vip.com",
+                "mapi.vip.com",
+                "order.api.vip.com",
+                "mapi.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "i.vip.com",
+                "passport.api.vip.com",
+                "coupon.api.vip.com",
+                "club.vip.com",
+                "myopen.vip.com",
+                "share.vip.com",
+                "my.vip.com",
+                "coupon.api.vip.com"
+            ],
+            "dependedOnBy": [],
+            "docs": "<p><h2>user.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/user.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/user.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "goods.api.vip.com": {
+            "name": "goods.api.vip.com",
+            "type": "API",
+            "depends": [
+                "myi.vip.com",
+                "order.api.vip.com",
+                "checkout.api.vip.com",
+                "shop.api.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "cart.vip.com",
+                "my.vip.com",
+                "mapi-stock.vip.com",
+                "mapi-cart.vip.com",
+                "mapi-cart.vip.com",
+                "shop.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.vip.com",
+                "order.api.vip.com",
+                "my.vip.com",
+                "mapi-stock.vip.com",
+                "cart.vip.com"
+            ],
+            "dependedOnBy": [
+                "order.api.vip.com",
+                "order.api.vip.com"
+            ],
+            "docs": "<p><h2>goods.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/goods.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/goods.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "shop.api.vip.com": {
+            "name": "shop.api.vip.com",
+            "type": "API",
+            "depends": [
+                "myi.vip.com",
+                "vipcms.vip.com",
+                "act.vip.com",
+                "shop.vip.com",
+                "myi.vip.com",
+                "vipcms.vip.com",
+                "kid.vip.com",
+                "home.vip.com",
+                "beauty.vip.com",
+                "shop.vip.com",
+                "beauty.vip.com",
+                "home.vip.com",
+                "act.vip.com"
+            ],
+            "dependedOnBy": [
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "brand.api.vip.com",
+                "brand.api.vip.com"
+            ],
+            "docs": "<p><h2>shop.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/shop.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/shop.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "coupon.api.vip.com": {
+            "name": "coupon.api.vip.com",
+            "type": "API",
+            "depends": [
+                "myi.vip.com",
+                "checkout.api.vip.com",
+                "checkout.vip.com",
+                "order.api.vip.com",
+                "i.vip.com",
+                "order.api.vip.com",
+                "checkout.api.vip.com",
+                "myi.vip.com",
+                "checkout.vip.com",
+                "i.vip.com"
+            ],
+            "dependedOnBy": [
+                "user.api.vip.com",
+                "user.api.vip.com"
+            ],
+            "docs": "<p><h2>coupon.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/coupon.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/coupon.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "image.api.vip.com": {
+            "name": "image.api.vip.com",
+            "type": "API",
+            "depends": [
+                "myi.vip.com",
+                "myi.vip.com"
+            ],
+            "dependedOnBy": [],
+            "docs": "<p><h2>image.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/image.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/image.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "brand.vip.com": {
+            "name": "brand.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "mi.api.vip.com",
+                "mi.api.vip.com"
+            ],
+            "docs": "<p><h2>brand.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/brand.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/brand.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "checkout.api.vip.com": {
+            "name": "checkout.api.vip.com",
+            "type": "API",
+            "depends": [
+                "mapi-cart.vip.com",
+                "order.api.vip.com",
+                "checkout.vip.com",
+                "cart.vip.com",
+                "mapi-cart.vip.com",
+                "checkout.vip.com",
+                "order.api.vip.com",
+                "cart.vip.com"
+            ],
+            "dependedOnBy": [
+                "wallet.api.vip.com",
+                "wallet.api.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "coupon.api.vip.com",
+                "coupon.api.vip.com"
+            ],
+            "docs": "<p><h2>checkout.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/checkout.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/checkout.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "checkout.vip.com": {
+            "name": "checkout.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "wallet.api.vip.com",
+                "wallet.api.vip.com",
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "coupon.api.vip.com",
+                "coupon.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.api.vip.com"
+            ],
+            "docs": "<p><h2>checkout.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/checkout.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/checkout.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "cart.vip.com": {
+            "name": "cart.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.api.vip.com"
+            ],
+            "docs": "<p><h2>cart.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/cart.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/cart.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "my.vip.com": {
+            "name": "my.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "order.api.vip.com",
+                "order.api.vip.com",
+                "user.api.vip.com",
+                "user.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com"
+            ],
+            "docs": "<p><h2>my.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/my.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/my.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "mapi-stock.vip.com": {
+            "name": "mapi-stock.vip.com",
+            "type": "API",
+            "depends": [],
+            "dependedOnBy": [
+                "goods.api.vip.com",
+                "goods.api.vip.com"
+            ],
+            "docs": "<p><h2>mapi-stock.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/mapi-stock.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/mapi-stock.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "mapi-cart.vip.com": {
+            "name": "mapi-cart.vip.com",
+            "type": "API",
+            "depends": [],
+            "dependedOnBy": [
+                "mi.api.vip.com",
+                "mi.api.vip.com",
+                "goods.api.vip.com",
+                "goods.api.vip.com",
+                "checkout.api.vip.com",
+                "checkout.api.vip.com"
+            ],
+            "docs": "<p><h2>mapi-cart.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/mapi-cart.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/mapi-cart.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "vipcms.vip.com": {
+            "name": "vipcms.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>vipcms.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/vipcms.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/vipcms.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "address.api.vip.com": {
+            "name": "address.api.vip.com",
+            "type": "API",
+            "depends": [
+                "order.api.vip.com",
+                "i.api.vip.com",
+                "order.api.vip.com",
+                "i.api.vip.com"
+            ],
+            "dependedOnBy": [],
+            "docs": "<p><h2>address.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/address.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/address.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "i.api.vip.com": {
+            "name": "i.api.vip.com",
+            "type": "API",
+            "depends": [
+                "mi.api.vip.com",
+                "mi.api.vip.com"
+            ],
+            "dependedOnBy": [
+                "address.api.vip.com",
+                "address.api.vip.com"
+            ],
+            "docs": "<p><h2>i.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/i.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/i.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "act.vip.com": {
+            "name": "act.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>act.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/act.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/act.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "shop.vip.com": {
+            "name": "shop.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>shop.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/shop.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/shop.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "kid.vip.com": {
+            "name": "kid.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>kid.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/kid.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/kid.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "home.vip.com": {
+            "name": "home.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>home.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/home.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/home.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "beauty.vip.com": {
+            "name": "beauty.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "docs": "<p><h2>beauty.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/beauty.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/beauty.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "brand.api.vip.com": {
+            "name": "brand.api.vip.com",
+            "type": "API",
+            "depends": [
+                "shop.api.vip.com",
+                "shop.api.vip.com"
+            ],
+            "dependedOnBy": [],
+            "docs": "<p><h2>brand.api.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/brand.api.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/brand.api.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "myopen.vip.com": {
+            "name": "myopen.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "user.api.vip.com",
+                "user.api.vip.com"
+            ],
+            "docs": "<p><h2>myopen.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/myopen.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/myopen.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "share.vip.com": {
+            "name": "share.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "user.api.vip.com",
+                "user.api.vip.com"
+            ],
+            "docs": "<p><h2>share.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/share.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/share.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "club.vip.com": {
+            "name": "club.vip.com",
+            "type": "POOL",
+            "depends": [],
+            "dependedOnBy": [
+                "user.api.vip.com",
+                "user.api.vip.com"
+            ],
+            "docs": "<p><h2>club.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/club.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/club.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        },
+        "mapi.vip.com": {
+            "name": "mapi.vip.com",
+            "type": "API",
+            "depends": [],
+            "dependedOnBy": [
+                "user.api.vip.com",
+                "user.api.vip.com"
+            ],
+            "docs": "<p><h2>mapi.vip.com</h2><a href='http://logview2.tools.vip.com/nginx/index/mapi.vip.com' target='_parent'>Nginx详情页</a><a href='http://logview2.tools.vip.com/nginx/index/mapi.vip.com?tag=poolmap' target='_parent'>域关系图</a></p>\n"
+        }
+    },
+    "errors": []
+}

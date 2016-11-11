@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript" src="d3-cookbook/node_modules/d3/d3.js"></script>
+<script>
+//画布大小
+var width = 400;
+var height = 800;
+ 
+//在 body 里添加一个 SVG 画布   
+var svg = d3.select("body")
+    .append("svg")
+    .attr("width", width)
+    .attr("height", height);
+	
+//画布周边的空白
+ var padding = {left:30, right:30, top:20, bottom:20};
+ //定义一个数组
+var dataset = [10, 20, 30, 40, 33, 24, 12, 5];
+        
+//x轴的比例尺
+var xScale = d3.scale.ordinal()
+    .domain(d3.range(dataset.length))
+    .rangeRoundBands([0, width - padding.left - padding.right]);
+
+//y轴的比例尺
+var yScale = d3.scale.linear()
+    .domain([0,d3.max(dataset)])
+    .range([height - padding.top - padding.bottom, 0]);
+	
+//定义x轴
+var xAxis = d3.svg.axis()
+    .scale(xScale)
+    .orient("bottom");
+        
+//定义y轴
+var yAxis = d3.svg.axis()
+    .scale(yScale)
+    .orient("left");
+	
+//矩形之间的空白
+var rectPadding = 4;
+
+
+var rects = svg.selectAll(".MyRect")
+        .data(dataset)
+        .enter()
+        .append("rect")
+        .attr("class","MyRect")   //把类里的 fill 属性清空
+        .attr("transform","translate(" + padding.left + "," + padding.top + ")")
+        .attr("x", function(d,i){
+            return xScale(i) + rectPadding/2;
+        } )
+        .attr("y",function(d){
+            return yScale(d);
+        })
+        .attr("width", xScale.rangeBand() - rectPadding )
+        .attr("height", function(d){
+            return height - padding.top - padding.bottom - yScale(d);
+        })
+        .attr("fill","steelblue")       //填充颜色不要写在CSS里
+        .on("mouseover",function(d,i){
+            d3.select(this)
+                .attr("fill","yellow");
+        })
+        .on("mouseout",function(d,i){
+            d3.select(this)
+                .transition()
+                .duration(500)
+                .attr("fill","steelblue");
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+拓扑图：
+1、数据驱动绘图 √
+
+2、点击域展示直接关联所有域  √
+
+3、连线鼠标经过展示流量等相关情况  √
+
+4、根据各流量情况分别展示不一样颜色连线、域名健康状态展示  √
+
+5、图标自适应展示  √
+
+6、支持添加根域的上游域
+
+功能概述：以指定根域进行自定义展示域的树形结构，根据相关监控统计按协定好的指标进行关系的区别展示，鼠标经过关系连线，展示相关关联数据详情。
+
+接口：
+总拓扑数据  /app/alldomains
+defaultDomain : "www.vip.com",
+{
+  "www.vip.com": {
+  "name": "myi.vip.com",
+  "depends": [],
+  "dependedOnBy": [
+    { "name" : "passport.api.vip.com","flow": 1000},
+    { "name" : "shop.api.vip.com","flow": 2000},
+    { "name" : "user.api.vip.com","flow": 3000},
+    { "name" : "myi.vip.com","flow": 1000}
+  ]
+  }
+}
+
+删除  /app/delete?domain=www.vip.com
+data: false/true
+
+新增
+获取新增list  /app/serverslist?domain=www.vip.com
+[{"name":"myi.vip.com"}]
+添加新增list  /app/serveradd?domain=www.vip.com&servers=user.vip.com,book.vip.com
+data: false/true  ?  刷新整体数据
+
+修改：与父级新增同理
+获取新增list  /app/serverslist?domain=www.vip.com
+删除当前： /app/delete?domain=www.vip.com
+添加新增list  /app/serveradd?domain=www.vip.com&servers=user.vip.com,book.vip.com
+
+出口list /app/servers/leave?domain=www.vip.com
+[]
+
+入口域list /app/servers/into?domain=www.vip.com
+[]
+
+
+
+www.vip.com
+
+
+m.vip.com
+home.vip.com
+jinrong.vip.com
+trip.vip.com
+
+
+kid.vip.com
+beauty.vip.com
+goods.vip.com
+global.vip.com
+order.vip.com
+fav.vip.com
+
+
+
+
+
+goods.api.vip.com
+image.api.vip.com
+wallet.api.vip.com
+
+i.vip.com
+passport.vip.com
+user.api.vip.com
+coupon.api.vip.com
+passport.api.vip.com
+mapi.vip.com
+club.vip.com
+myopen.vip.com
+brand.api.vip.com
+share.vip.com
+beauty.vip.com
+shop.vip.com
+shop.api.vip.com
+act.vip.com
+address.api.vip.com
+mi.api.vip.com
+mapi-cart.vip.com
+order.api.vip.com
+
+
+iclub.vip.com
+help.vip.com
+
+survey.vip.com
+
+category.vip.com
+
